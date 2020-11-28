@@ -1,0 +1,30 @@
+database: &database
+  DB_USERNAME: postgres
+  DB_PASSWORD: postgres
+  DB_HOST: db
+
+mailer: &mailer
+  MAILER_ADDRESS: smtp.gmail.com
+  MAILER_PORT: '587'
+  MAILER_USER_NAME:
+  MAILER_PASSWORD:
+  MAILER_DOMAIN: gmail.com
+
+development:
+  <<: *mailer
+  <<: *database
+  JWT_KEY:
+
+test:
+  <<: *mailer
+  <<: *database
+  JWT_KEY:
+  FRONT_CONFIRM_URL:
+
+production:
+  JWT_KEY:
+  DB_USERNAME:
+  DB_PASSWORD:
+  DB_HOST:
+  DB_DATABASE:
+  <<: *mailer
