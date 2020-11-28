@@ -7,7 +7,7 @@
 
 + DOCKER
     + RUN `docker-compose up -d`
-    + RUN `docker exec -it ecommerce_api /bin/bash`
+    + RUN `docker exec -it ecommerce_app /bin/bash`
     
 + DEPENDENCIES
     + RUN `bundle`
@@ -15,7 +15,6 @@
         + RUN `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
         + exit and back to container
         + RUN `nvm install node`
-        + exit and back to container  
         + RUN `npm i -g yarn`
     + RUN `yarn`
     
