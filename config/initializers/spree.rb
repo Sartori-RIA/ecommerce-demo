@@ -29,3 +29,7 @@ end
 # Spree::Api::Dependencies.storefront_cart_serializer = 'MyRailsApp::CartSerializer'
 
 Spree.user_class = "Spree::User"
+
+SpreeI18n::Config.available_locales = [:'pt-BR'] # displayed on frontend select box
+SpreeGlobalize::Config.supported_locales = [:'pt-BR'] # displayed on translation forms
+

@@ -16,6 +16,8 @@ gem 'spree', '~> 4.1'
 gem 'spree_auth_devise', '~> 4.2'
 gem 'spree_gateway', '~> 3.9'
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
