@@ -1,24 +1,33 @@
-# README
+# Ecommerce
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
++ ENV
+    + RUN `cp config/application.yml.example config/application.yml`
 
-* Ruby version
++ DOCKER
+    + RUN `docker-compose up -d`
+    + RUN `docker exec -it ecommerce_api /bin/bash`
+    
++ DEPENDENCIES
+    + RUN `bundle`
+    + NVM
+        + RUN `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
+        + exit and back to container
+        + RUN `nvm install node`
+        + exit and back to container  
+        + RUN `npm i -g yarn`
+    + RUN `yarn`
+    
++ DATABASE
+    + RUN `rails db:create`
+    + RUN `rails db:migrate`
+    + RUN `rails db:seed`
+    + RUN `rails spree_sample:load`
 
-* System dependencies
++ GET API KEY
+    + RUN `rails c`
+    + RUN `Spree::User.find_by_email('admin@example.com').try(:spree_api_key)`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
++ START SERVER
+    + RUN `rails s -b=0.0.0.0`
